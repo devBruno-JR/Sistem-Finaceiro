@@ -1,0 +1,9 @@
+.footer {
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
+  padding-top: 10px;
+  /* border-top: 1px solid #323743FF; */
+  width: 100%;
+}

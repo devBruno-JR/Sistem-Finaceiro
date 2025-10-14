@@ -4,6 +4,7 @@ import logo from '../../assets/91779e8a-46ba-4ff0-937d-d8fe1204a08d (1).svg'
 import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import { toast } from 'react-toastify';
 
 
 
@@ -17,6 +18,9 @@ async function handleLogin(e:React.FormEvent<HTMLFormElement>) {
 
     if(email != '' && senha !=''){
         await login(email, senha)
+    }
+    else{
+        toast.warning('preencha todos os campos corretamente');
     }
 }
 
