@@ -1,11 +1,10 @@
-import Header from '../../components/Header';
-import Rodape from '../../components/Rodape';
+import styles from './dash.module.css';
+
 
 export default function Dashboard() {
  return (
-   <div style={{backgroundColor:'#000' , height:'100vh'}}>
-<Header/>
-<Rodape/>
+   <div className={styles.container}>
+
 
    </div>
  );

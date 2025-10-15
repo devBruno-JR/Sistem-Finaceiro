@@ -2,7 +2,7 @@
 import styles from './Registrer.module.css'
 import logo from '../../assets/91779e8a-46ba-4ff0-937d-d8fe1204a08d (1).svg'
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext'; 
 import { toast } from 'react-toastify';
 
@@ -12,12 +12,14 @@ export default function Registrer() {
   const [senha, setSenha] = useState('');
   const [confirmaSenha, setConfirmaSenha] = useState('');
   const {registre} = useContext(AuthContext);
+  const navigate = useNavigate();
 
 async function handleRegistre(e:React.FormEvent<HTMLFormElement>) {
   e.preventDefault()
   if(nome != '' && email != '' && senha !='' && confirmaSenha !=''){
     if(senha === confirmaSenha){
      await registre(nome, email, senha, );
+      navigate('/dashboard')
      toast.success('Usuario cadastrado com sucesso');
     }else{
       console.log('as senhas nao conferem');

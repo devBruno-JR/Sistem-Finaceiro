@@ -1,44 +1,86 @@
-.header {
-  width: 254px;
-  height: 90vh;
-  background: #000;
-  border-right: 1.5px solid #323743FF;
-  border-bottom: 1.5px solid #323743FF;;
-  border-radius: 4px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* empurra os filhos para topo e base */
+.header{
+    background-color: #000000FF;
+    border-bottom: 1px solid #323743FF; 
+    font-family: 'Inter', sans-serif;
+    color: white;
+    /* padding: 10px 20px; */
+/* height: 50px; */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-  padding: 20px; /* para não colar nas bordas */
 }
-
-.title {
-  font-family: 'Urbanist';
-  font-size: 24px;
-  line-height: 29px;
-  font-weight: 700;
-  color: #3B82F6FF;
-  margin: 0; /* resetar margens se precisar */
+.imagem{
+    height: 40px;
+    margin-left: 10px;
+    width: 40px;
+    object-fit: cover;
 }
-
-.button {
-  width: 230px;
-  height: 40px;
-  padding: 0 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Inter';
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 500;
-  color: #FFFFFFFF;
-  background: #DC2828FF;
-  opacity: 1;
-  border: none;
-  border-radius: 3px;
-  gap: 16px;
+.header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+}
+.header a:hover {
+    text-decoration: underline;
+}
+.user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.user span{
+    font-size: 14px;
+    font-weight: 500;
+}
+.user button{
+    background-color: #FF4B3E;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
     cursor: pointer;
-    /* margin: 0 auto  centraliza horizontalmente e dá margem embaixo */
+    font-size: 12px;
+}
+.user button:hover{
+    background-color: #E04337;
+}
+.nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.nav li{
+    margin: 0 10px;
+}
+
+/* Responsive header: stack nav items on small screens */
+@media (max-width: 640px) {
+    .nav ul { flex-direction: column; gap: 8px; }
+    .header { padding: 8px 12px; }
+    .user span { display: none; }
+}
+.nav li:first-child{
+    margin-left: 0;
+}
+.nav li:last-child{
+    margin-right: 0;
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+.nav a:hover{
+    text-decoration: underline;
+    color: #3B82F6Ff;
 }
